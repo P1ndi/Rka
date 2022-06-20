@@ -1,0 +1,29 @@
+String pom;
+
+pom = "00000000"+(ID.toInt64()+45477355).toString();
+pom = pom.right(8);
+
+if(pom.Length != 8)
+   logError("Zly pocet cislic");
+
+String sucet = pom;
+
+Int n1 =(sucet.mid(0,1).toInt())*8; 
+Int n2 =(sucet.mid(1,1).toInt())*6; 
+Int n3 =(sucet.mid(2,1).toInt())*4; 
+Int n4 =(sucet.mid(3,1).toInt())*2; 
+Int n5 =(sucet.mid(4,1).toInt())*3; 
+Int n6 =(sucet.mid(5,1).toInt())*5; 
+Int n7 =(sucet.mid(6,1).toInt())*9; 
+Int n8 =(sucet.mid(7,1).toInt())*7; 
+
+Int n = (n1+n2+n3+n4+n5+n6+n7+n8) ;
+n=11-(n%11);
+
+if (n == 10)
+   n=0;
+else if(n==11) 
+   n=5;
+
+
+return "OA"+sucet+n.toString()+"SK";
